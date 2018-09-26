@@ -1,41 +1,41 @@
 package br.com.mouseweb.sistema.util;
 
-import com.mysql.jdbc.Connection;
+import br.com.mouseweb.sistema.util.exception.ErroSistema;
+import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class FabricaConexao {
     
     private static Connection conexao;
-    private static final String URL_CONEXAO = "jdbc:mysql://localhost/";
-    private static final String USUARIO = "root";
-    private static final String SENHA = "root";
+    private static final String URL_CONEXAO = "jdbc:oracle:thin:@localhost:1521:sistema_carros";
+    private static final String USUARIO = "douglas";
+    private static final String SENHA = "123";
 
-    public static Connection getConexao() {
+    public static Connection getConexao() throws ErroSistema {
         if(conexao == null){
             try {
-                Class.forName("com.mysql.jdbc.Driver");
-                conexao = (Connection) DriverManager.getConnection(URL_CONEXAO, USUARIO, SENHA);
+                Class.forName("oracle.jdbc.OracleDriver");
+                conexao = DriverManager.getConnection(URL_CONEXAO, USUARIO, SENHA);
             } catch (SQLException ex) {
-                Logger.getLogger(FabricaConexao.class.getName()).log(Level.SEVERE, null, ex);
+                throw new ErroSistema("Não foi possível conectar ao banco de dados!", ex);
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(FabricaConexao.class.getName()).log(Level.SEVERE, null, ex);
+                throw new ErroSistema("O driver do banco de dados não foi encontrado!", ex);
             }
         }
         return conexao;
     }
     
-    public static void fecharConexao(){
+    public static void fecharConexao() throws ErroSistema{
         if(conexao != null){
             try {
                 conexao.close();
                 conexao = null;
             } catch (SQLException ex) {
-                Logger.getLogger(FabricaConexao.class.getName()).log(Level.SEVERE, null, ex);
+                throw new ErroSistema("Erro ao fechar conexão com o banco de dados!", ex);
             }
         }
     }
+    
     
 }

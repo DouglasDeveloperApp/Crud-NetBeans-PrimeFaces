@@ -1,9 +1,12 @@
 package br.com.mouseweb.sistema.beans;
 
-import br.com.mouseweb.sistema.dao.CarroDao;
+import br.com.mouseweb.sistema.dao.CarroDAO;
 import br.com.mouseweb.sistema.entidades.Carro;
+import br.com.mouseweb.sistema.util.exception.ErroSistema;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -18,7 +21,6 @@ public class CarroBean {
     
     public void adicionar(){
         carros.add(carro);
-        new CarroDao().salvar(carro);
         carro = new Carro();
         
     }
