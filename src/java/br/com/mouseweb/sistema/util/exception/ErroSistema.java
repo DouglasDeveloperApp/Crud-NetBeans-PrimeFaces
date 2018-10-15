@@ -1,8 +1,8 @@
 package br.com.mouseweb.sistema.util.exception;
 
 public class ErroSistema extends Exception {
-    
-     public ErroSistema(String message) {
+
+    public ErroSistema(String message) {
         super(message);
     }
 

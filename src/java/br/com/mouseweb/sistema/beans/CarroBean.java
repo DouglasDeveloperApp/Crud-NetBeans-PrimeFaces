@@ -14,32 +14,21 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 // Gerenciador Bean = Intermédia o HTML para o Java
 @ManagedBean
-public class CarroBean {
+public class CarroBean extends CrudBean<Carro, CarroDAO> {
+
+    private CarroDAO carroDAO;
     
-    private Carro carro = new Carro();
-    private List<Carro> carros = new ArrayList<>();
-    
-    public void adicionar(){
-        carros.add(carro);
-        carro = new Carro();
-        
+    @Override
+    public CarroDAO getDao() {
+        if(carroDAO == null){
+            carroDAO = new CarroDAO();
+        }
+        return carroDAO;
     }
 
-    public Carro getCarro() {
-        return carro;
+    @Override
+    public Carro criarNovaEntidade() {
+        return new Carro();
     }
 
-    public void setCarro(Carro carro) {
-        this.carro = carro;
-    }
-
-    public List<Carro> getCarros() {
-        return carros;
-    }
-
-    public void setCarros(List<Carro> carros) {
-        this.carros = carros;
-    }
-    
-    
 }

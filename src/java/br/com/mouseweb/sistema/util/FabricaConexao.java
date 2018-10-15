@@ -9,13 +9,13 @@ public class FabricaConexao {
     
     private static Connection conexao;
     private static final String URL_CONEXAO = "jdbc:oracle:thin:@localhost:1521:sistema_carros";
-    private static final String USUARIO = "douglas";
-    private static final String SENHA = "123";
+    private static final String USUARIO = "root";
+    private static final String SENHA = "root";
 
     public static Connection getConexao() throws ErroSistema {
         if(conexao == null){
             try {
-                Class.forName("oracle.jdbc.OracleDriver");
+                Class.forName("com.mysql.jdbc.Driver");
                 conexao = DriverManager.getConnection(URL_CONEXAO, USUARIO, SENHA);
             } catch (SQLException ex) {
                 throw new ErroSistema("Não foi possível conectar ao banco de dados!", ex);
@@ -36,6 +36,5 @@ public class FabricaConexao {
             }
         }
     }
-    
     
 }
