@@ -8,9 +8,9 @@ import java.sql.SQLException;
 public class FabricaConexao {
     
     private static Connection conexao;
-    private static final String URL_CONEXAO = "jdbc:oracle:thin:@localhost:1521:sistema_carros";
+    private static final String URL_CONEXAO = "jdbc:mysql://localhost/sistema_carro";
     private static final String USUARIO = "root";
-    private static final String SENHA = "root";
+    private static final String SENHA = null;
 
     public static Connection getConexao() throws ErroSistema {
         if(conexao == null){

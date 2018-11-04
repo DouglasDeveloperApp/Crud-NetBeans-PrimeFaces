@@ -6,11 +6,17 @@
             <file>file:/C:/Douglas/NetBeans/SistemaCarros/src/java/br/com/mouseweb/sistema/util/FabricaConexao.java</file>
             <file>file:/C:/Douglas/NetBeans/SistemaCarros/src/java/br/com/mouseweb/sistema/entidades/Carro.java</file>
             <file>file:/C:/Douglas/NetBeans/SistemaCarros/src/java/br/com/mouseweb/sistema/beans/CarroBean.java</file>
+            <file>file:/C:/Douglas/NetBeans/SistemaCarros/src/java/br/com/mouseweb/sistema/dao/UsuarioDAO.java</file>
+            <file>file:/C:/Douglas/NetBeans/SistemaCarros/web/gerenciar-usuario.xhtml</file>
+            <file>file:/C:/Douglas/NetBeans/SistemaCarros/src/java/br/com/mouseweb/sistema/beans/UsuarioBean.java</file>
+            <file>file:/C:/Douglas/NetBeans/SistemaCarros/src/java/br/com/mouseweb/sistema/dao/CarroDAO.java</file>
+            <file>file:/C:/Douglas/NetBeans/SistemaCarros/src/java/br/com/mouseweb/sistema/dao/CrudDAO.java</file>
+            <file>file:/C:/Douglas/NetBeans/SistemaCarros/web/template.xhtml</file>
+            <file>file:/C:/Douglas/NetBeans/SistemaCarros/src/java/br/com/mouseweb/sistema/entidades/Usuario.java</file>
+            <file>file:/C:/Douglas/NetBeans/SistemaCarros/src/java/br/com/mouseweb/sistema/beans/CrudBean.java</file>
             <file>file:/C:/Douglas/NetBeans/SistemaCarros/src/java/br/com/mouseweb/sistema/util/exception/ErroSistema.java</file>
             <file>file:/C:/Douglas/NetBeans/SistemaCarros/web/gerenciar-carros.xhtml</file>
             <file>file:/C:/Douglas/NetBeans/SistemaCarros/web/index.xhtml</file>
-            <file>file:/C:/Douglas/NetBeans/SistemaCarros/src/java/br/com/mouseweb/sistema/dao/CarroDAO.java</file>
-            <file>file:/C:/Douglas/NetBeans/SistemaCarros/web/template.xhtml</file>
         </group>
     </open-files>
 </project-private>
